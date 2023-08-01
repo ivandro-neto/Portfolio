@@ -55,6 +55,7 @@
     min-height: 100vh;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 .brand img{
     width: 450px;
@@ -273,6 +274,7 @@ footer{
     display: flex;
     justify-content: center;
     gap: 20px;
+    padding: 20px;
 }
 footer a{
 

@@ -14,6 +14,7 @@ const socialIcons = document.querySelector(".footer a");
 let src = brand.src;
 
 function show(img) {
+  brand.style.width = '100%'
   brand.style.transform = "scaleX(0px) scaleY(0px) scaleZ(0px)";
   brand.style.opacity = "0";
   setTimeout(() => {
@@ -24,6 +25,7 @@ function show(img) {
 }
 console.log(links);
 function hide() {
+  brand.style.width = '450px'
   brand.style.opacity = "0";
   setTimeout(() => {
     brand.src = src;
