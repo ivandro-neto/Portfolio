@@ -72,7 +72,6 @@
 }
 
 .informations header nav ul {
-  position: relative;
   display: flex;
   list-style: none;
   gap: 100px;
@@ -80,6 +79,12 @@
   padding: 20px;
 }
 
+nav{
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+}
 .informations li a {
   padding: 5px;
   text-decoration: none;
