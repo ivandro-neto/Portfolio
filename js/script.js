@@ -10,11 +10,10 @@ let links = document.querySelector(".informations header ul li");
 const background_brand = document.querySelector(".brand");
 const btn = document.querySelector("#btn");
 const container = document.querySelector(".container");
-const socialIcons = document.querySelector(".footer a");
 let src = brand.src;
 
 function show(img) {
-  brand.style.width = '100%'
+  brand.style.width = "100%";
   brand.style.transform = "scaleX(0px) scaleY(0px) scaleZ(0px)";
   brand.style.opacity = "0";
   setTimeout(() => {
@@ -25,7 +24,7 @@ function show(img) {
 }
 console.log(links);
 function hide() {
-  brand.style.width = '450px'
+  brand.style.width = "20em";
   brand.style.opacity = "0";
   setTimeout(() => {
     brand.src = src;
@@ -37,7 +36,6 @@ let switcher = 0;
 function onload() {
   switcher = 1;
 }
-
 
 function contact_btn() {
   switcher = 3;
@@ -100,6 +98,15 @@ setInterval(() => {
     about.style.opacity = "0";
     project.style.opacity = "0";
   }
-  
-  
 }, 1);
+
+icon.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  if (document.body.classList.contains("dark-mode")) {
+    brand.src = src = "images/Brand/Logo-extended---white.png";
+    icon.src = "images/icons/imoon.png"
+  } else {
+    brand.src = src = "images/Brand/Logo-extended---black.png";
+    icon.src = "images/icons/isun.png"
+  }
+});
