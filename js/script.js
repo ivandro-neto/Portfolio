@@ -100,13 +100,14 @@ setInterval(() => {
   }
 }, 1);
 
+const icon = document.querySelector("#icon");
 icon.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
   if (document.body.classList.contains("dark-mode")) {
     brand.src = src = "images/Brand/Logo-extended---white.png";
-    icon.src = "images/icons/imoon.png"
+    icon.src = "images/icons/imoon.png";
   } else {
     brand.src = src = "images/Brand/Logo-extended---black.png";
-    icon.src = "images/icons/isun.png"
+    icon.src = "images/icons/isun.png";
   }
 });
