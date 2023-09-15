@@ -61,10 +61,10 @@ tabs.forEach((element) => {
 
 setInterval(() => {
   if (switcher === 1) {
-    selected_tab.style.width = `10%`;
+    selected_tab.style.width = `15%`;
     content.style.transform = `translateX(0px)`;
     if (window.innerWidth <= 768) {
-      selected_tab.style.transform = `translateX(-140px)`;
+      selected_tab.style.transform = `translateX(-130px)`;
       about.style.display = "flex";
       project.style.display = "none";
       contact.style.display = "none";
