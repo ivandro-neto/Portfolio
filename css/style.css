@@ -22,10 +22,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.mode {
   right: 5%;
 }
 
-#icon {
+.lang {
+  left: 5%;
+}
+
+#iconMode {
+  width: 1.7rem;
+  cursor: pointer;
+  transition: all 500ms;
+}
+#iconLang {
   width: 1.7rem;
   cursor: pointer;
   transition: all 500ms;
@@ -76,14 +88,15 @@
   list-style: none;
   gap: 100px;
   justify-content: center;
+  align-items: center;
   padding: 20px;
+  width: 100%;
 }
 
-nav{
-    position: relative;
-    display: flex;
-    justify-content: center;
-
+nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
 }
 .informations li a {
   padding: 5px;
@@ -286,6 +299,9 @@ footer a {
 /* MOBILE */
 
 @media screen and (max-width: 768px) {
+  nav {
+    justify-content: space-between;
+  }
   .container {
     flex-direction: column;
   }
@@ -300,7 +316,7 @@ footer a {
     font-size: 1.5em;
   }
   .description h1 {
-    font-size: 1.8em;
+    font-size: 1.5em;
   }
   .description {
     width: 80%;

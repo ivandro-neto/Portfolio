@@ -17,12 +17,12 @@ function show(img) {
   brand.style.transform = "scaleX(0px) scaleY(0px) scaleZ(0px)";
   brand.style.opacity = "0";
   setTimeout(() => {
-    brand.src = img.firstElementChild.src;
+    brand.src = img.src;
     brand.style.transform = "scaleX(20px) scaleY(100px) scaleZ(-30px)";
     brand.style.opacity = "100%";
   }, 1000);
 }
-console.log(links);
+
 function hide() {
   brand.style.width = "20em";
   brand.style.opacity = "0";
@@ -32,10 +32,7 @@ function hide() {
   }, 1000);
 }
 
-let switcher = 0;
-function onload() {
-  switcher = 1;
-}
+let switcher = 1;
 
 function contact_btn() {
   switcher = 3;
@@ -43,71 +40,90 @@ function contact_btn() {
 tabs.forEach((element) => {
   element.addEventListener("click", () => {
     if (element.id === about.id + "-link") {
-      console.log(about.id);
       switcher = 1;
       // selected_tab.style.width= `15%`;
     } else if (element.id === project.id + "-link") {
-      console.log(project.id);
-
       switcher = 2;
       //selected_tab.style.width= `23%`;
     } else if (element.id === contact.id + "-link") {
-      console.log(contact.id);
       switcher = 3;
       //selected_tab.style.width= `23%`;
     }
   });
 });
 
+const TabSwitcher = () => {
+  //Tab bar behavior
+  switch (switcher) {
+    case 1:
+      selected_tab.style.width = "15%";
+
+      content.style.transform = `translateX(0px)`;
+      if (window.innerWidth <= 768) {
+        selected_tab.style.transform =
+          localStorage.getItem("language") === "en"
+            ? `translateX(50px)`
+            : `translateX(30px)`;
+        about.style.display = "flex";
+        project.style.display = "none";
+        contact.style.display = "none";
+      } else
+        selected_tab.style.transform =
+          localStorage.getItem("language") === "en"
+            ? `translateX(75px)`
+            : `translateX(53px)`;
+      about.style.opacity = "100%";
+      project.style.opacity = "0";
+      contact.style.opacity = "0";
+      break;
+    case 2:
+      selected_tab.style.transform =
+        localStorage.getItem("language") === "en"
+          ? `translateX(250px)`
+          : `translateX(236px)`;
+      selected_tab.style.width = `20%`;
+      content.style.transform = `translateX(0vw)`;
+      if (window.innerWidth <= 768) {
+        selected_tab.style.transform =
+          localStorage.getItem("language") === "en"
+            ? `translateX(143px)`
+            : `translateX(117px)`;
+        selected_tab.style.width =
+          localStorage.getItem("language") === "en" ? `25%` : `30%`;
+        about.style.display = "none";
+        project.style.display = "flex";
+        contact.style.display = "none";
+      }
+
+      project.style.opacity = "100%";
+      about.style.opacity = "0";
+      contact.style.opacity = "0";
+      break;
+    case 3:
+      selected_tab.style.width =
+        localStorage.getItem("language") === "en" ? `18%` : `22%`;
+      content.style.transform = `translateX(0vw)`;
+      if (window.innerWidth <= 768) {
+        selected_tab.style.width =
+          localStorage.getItem("language") === "en" ? `25%` : `28%`;
+        selected_tab.style.transform = `translateX(267px)`;
+        about.style.display = "none";
+        project.style.display = "none";
+        contact.style.display = "flex";
+      } else
+        selected_tab.style.transform =
+          localStorage.getItem("language") === "en"
+            ? `translateX(463px)`
+            : `translateX(457px)`;
+      contact.style.opacity = "100%";
+      about.style.opacity = "0";
+      project.style.opacity = "0";
+      break;
+    default:
+      break;
+  }
+};
+
 setInterval(() => {
-  if (switcher === 1) {
-    selected_tab.style.width = `10%`;
-    content.style.transform = `translateX(0px)`;
-    if (window.innerWidth <= 768) {
-      selected_tab.style.transform = `translateX(-140px)`;
-      about.style.display = "flex";
-      project.style.display = "none";
-      contact.style.display = "none";
-    } else selected_tab.style.transform = `translateX(-190px)`;
-    about.style.opacity = "100%";
-    project.style.opacity = "0";
-    contact.style.opacity = "0";
-  } else if (switcher === 2) {
-    selected_tab.style.transform = `translateX(-10px)`;
-    selected_tab.style.width = `12%`;
-    content.style.transform = `translateX(0vw)`;
-    if (window.innerWidth <= 768) {
-      about.style.display = "none";
-      project.style.display = "flex";
-      contact.style.display = "none";
-    }
-
-    project.style.opacity = "100%";
-    about.style.opacity = "0";
-    contact.style.opacity = "0";
-  } else if (switcher === 3) {
-    selected_tab.style.width = `11%`;
-    content.style.transform = `translateX(0vw)`;
-    if (window.innerWidth <= 768) {
-      selected_tab.style.transform = `translateX(128px)`;
-      about.style.display = "none";
-      project.style.display = "none";
-      contact.style.display = "flex";
-    } else selected_tab.style.transform = `translateX(178px)`;
-    contact.style.opacity = "100%";
-    about.style.opacity = "0";
-    project.style.opacity = "0";
-  }
+  TabSwitcher();
 }, 1);
-
-const icon = document.querySelector("#icon");
-icon.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-  if (document.body.classList.contains("dark-mode")) {
-    brand.src = src = "images/Brand/Logo-extended---white.png";
-    icon.src = "images/icons/imoon.png";
-  } else {
-    brand.src = src = "images/Brand/Logo-extended---black.png";
-    icon.src = "images/icons/isun.png";
-  }
-});

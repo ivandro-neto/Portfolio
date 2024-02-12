@@ -8,9 +8,11 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="shortcut icon" href="images/Brand/icon.png" type="image/x-icon" />
   <title>Ivandro Neto</title>
+  <script src="JSON/Projects.js"></script>
+  <script src="JSON/LanguageRole.js"></script>
 </head>
 
-<body onload="onload()">
+<body>
   <main class="container">
     <section class="brand">
       <img src="images/Brand/Logo-extended---black.png" alt="" />
@@ -44,65 +46,12 @@
               </p>
             </div>
 
-            <div class="btn" onclick="contact_btn()">
+            <div class="btn" id="btn" onclick="contact_btn()">
               <a href="mailto:ivandroneto1@outlook.com?subject=Let's%20work">Getting in touch</a>
             </div>
           </section>
           <section id="project">
-            <ul>
-              <li>
-                <div class="item">
-                  <a href="https://ivandro-neto.github.io/Time-Tracking-Dashboard/" onmouseout="hide()"
-                    onmouseover="show(this)" aria-label="Time Tracking Dashboard">
-                    <img src="images/Projects/Time Tracking Dashboard.png" alt="" />
-                  </a>
-                  <p>Time Tracking Dashboard</p>
-                </div>
-              </li>
-              <li>
-                <div class="item">
-                  <a href="https://ivandro-neto.github.io/MathGame/" onmouseout="hide()" onmouseover="show(this)"
-                    aria-label="Math Game">
-                    <img src="images/Projects/Math Game.png" alt="" />
-                  </a>
-                  <p>Math Game</p>
-                </div>
-              </li>
-              <li>
-                <div class="item">
-                  <a href="https://ivandro-neto.github.io/Ecommerce/" onmouseout="hide()" onmouseover="show(this)"
-                    aria-label="Ecommerce Website">
-                    <img src="images/Projects/Ecommerce.png" alt="" />
-                  </a>
-                  <p>Ecommerce Website</p>
-                </div>
-              </li>
-              <li>
-                <div class="item">
-                  <a href="http://kilunga.net" onmouseout="hide()" onmouseover="show(this)" aria-label="Kilunga">
-                    <img src="images/Projects/kilunga.png" alt="" />
-                  </a>
-                  <p>Kilunga</p>
-                </div>
-              </li>
-              <li>
-                <div class="item">
-                  <a href="https://ivandro-neto.github.io/advice-generator-app-main/" onmouseout="hide()"
-                    onmouseover="show(this)" aria-label="Advice Generator App">
-                    <img src="images/Projects/advice.png" alt="" />
-                  </a>
-                  <p>Advice Generator App</p>
-                </div>
-              </li>
-              <li>
-                <div class="item">
-                  <a href="https://spacium.netlify.app/" onmouseout="hide()" onmouseover="show(this)"
-                    aria-label="in progress project...">
-                    <img src="images/Projects/pending.png" alt="" />
-                  </a>
-                  <p>IN progress project...</p>
-                </div>
-              </li>
+            <ul class="project-area">
             </ul>
           </section>
           <section id="contact">
@@ -115,6 +64,9 @@
         </div>
       </div>
       <footer class="footer">
+        <div class="icon-box lang">
+          <span alt="Language" id="iconLang">EN</span>
+        </div>
         <a href="https://twitter.com/IvandroNeto6121" aria-label="Twitter">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path
@@ -133,13 +85,15 @@
               d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z" />
           </svg>
         </a>
-        <div class="icon-box">
-          <img src="images/icons/isun.png" alt="Theme" id="icon" />
+        <div class="icon-box mode">
+          <img src="images/icons/isun.png" alt="Theme" id="iconMode" />
         </div>
       </footer>
     </section>
   </main>
   <script src="js/script.js"></script>
+  <script src="js/LayoutMode.js"></script>
+  <script src="js/ProjectPolulation.js"></script>
 </body>
 
 </html>
