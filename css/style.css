@@ -33,12 +33,12 @@
 }
 
 #iconMode {
-  width: 1.7rem;
+  width: 2dvw;
   cursor: pointer;
   transition: all 500ms;
 }
 #iconLang {
-  width: 1.7rem;
+  font-size: 1.5dvw;
   cursor: pointer;
   transition: all 500ms;
 }
@@ -54,7 +54,7 @@
 }
 .container {
   display: flex;
-  max-width: 100%;
+  max-width: 100dvw;
   min-height: 100vh;
   color: var(--Darker-DarkMode);
   overflow: hidden;
@@ -63,14 +63,14 @@
 .brand {
   display: flex;
   background-color: var(--Darker-DarkMode);
-  min-width: 50%;
+  min-width: 50dvw;
   min-height: 100vh;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 }
 .brand img {
-  width: 20em;
+  width: 50%;
   transition: 500ms;
   transition-delay: 200ms;
 }
@@ -79,34 +79,59 @@
   display: flex;
   flex-direction: column;
   background-color: var(--Lighter-DarkMode);
-  width: 50%;
+  width: 50dvw;
   min-height: 100vh;
 }
 
 .informations header nav ul {
   display: flex;
   list-style: none;
-  gap: 100px;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  padding: 20px;
+  padding: 1.5dvw;
   width: 100%;
 }
 
 nav {
   position: relative;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
-.informations li a {
+
+.informations nav li a {
+  display: block;
+  position: relative;
   padding: 5px;
   text-decoration: none;
-  font-size: 1.2em;
+  font-size: 1.2dvw;
   text-transform: uppercase;
   font-weight: 500;
 }
 
-.selected-tab {
+.informations nav li a::after {
+  position: absolute;
+  content: "";
+  background-color: var(--Middle-DarkMode);
+  width: 0%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  transition: 500ms;
+}
+
+.informations nav li a:hover::after {
+  width: 100%;
+}
+
+.informations li a.selected::after {
+  background-color: var(--Darker-DarkMode);
+  width: 100%;
+  height: 3px;
+}
+
+/* .selected-tab {
   position: absolute;
   width: 10%;
   height: 1px;
@@ -114,7 +139,7 @@ nav {
   bottom: 15px;
   transform: translateX(-190px);
   transition: 500ms;
-}
+} */
 
 .carrosel {
   display: flex;
@@ -125,14 +150,14 @@ nav {
 }
 .content {
   display: flex;
-  width: 300vw;
+  width: 300dvw;
   height: 80vh;
 }
 #about {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 50vw;
+  min-width: 50dvw;
   min-height: 80vh;
   flex-direction: column;
   transition: 500ms;
@@ -144,13 +169,13 @@ nav {
   justify-content: flex-start;
   flex-direction: column;
   width: 70%;
-  font-size: 1.1em;
-  gap: 5px;
+  font-size: 1.3dvw;
+  gap: 1vw;
   line-height: 1.7;
 }
 
 .description h1 {
-  font-size: 2em;
+  font-size: 2.5dvw;
 }
 
 .description p {
@@ -162,12 +187,12 @@ nav {
   display: flex;
   margin-top: 70px;
   padding: 20px;
-  font-size: 1.1em;
+  font-size: 1.2dvw;
   border: 2px solid var(--Darker-DarkMode);
   background-color: transparent;
   overflow: hidden;
-  width: 250px;
-  height: 60px;
+  width: 22dvw;
+  height: 5dvw;
   cursor: pointer;
 }
 
@@ -175,7 +200,7 @@ nav {
   position: absolute;
   content: "";
   width: 0;
-  height: 200px;
+  height: 100%;
   background-color: var(--Darker-DarkMode);
   top: 0;
   left: 0;
@@ -207,7 +232,7 @@ nav {
 }
 #project {
   display: flex;
-  min-width: 50vw;
+  min-width: 50dvw;
   min-height: 80vh;
   flex-grow: 1;
   justify-content: center;
@@ -220,9 +245,9 @@ nav {
   align-items: center;
   justify-content: center;
   list-style: none;
-  gap: 15px;
+  gap: 3dvw;
   flex-wrap: wrap;
-  padding: 20px;
+  padding: 2dvw;
 }
 #project ul li {
   display: flex;
@@ -232,12 +257,12 @@ nav {
 
 .item img {
   border: 5px solid var(--Darker-DarkMode);
-  padding: 2px;
-  width: 200px;
+  padding: 0.3dvw;
+  width: 14dvw;
 }
 
 .item p {
-  font-size: 0.8em;
+  font-size: 0.9dvw;
   font-weight: 700;
 }
 .item {
@@ -246,10 +271,11 @@ nav {
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 200px;
+  width: 14dvw;
+  gap: 0.5dvw;
 }
 .item:hover::after {
-  width: 200px;
+  width: 100%;
 }
 
 .item::after {
@@ -258,7 +284,7 @@ nav {
   top: 3px;
   left: 0;
   width: 0;
-  height: 120.2px;
+  height: 8dvw;
   background-color: var(--Darker-DarkMode);
   transition: 500ms;
   pointer-events: none;
@@ -266,7 +292,7 @@ nav {
 
 #contact {
   display: flex;
-  min-width: 50vw;
+  min-width: 50dvw;
   min-height: 80vh;
   flex-grow: 1;
   flex-wrap: wrap;
@@ -278,19 +304,19 @@ nav {
 }
 #contact p {
   text-align: center;
-  font-size: 1.7em;
+  font-size: 1.7dvw;
 }
-.phone {
+/* .phone {
   display: flex;
-  gap: 15px;
+  gap: 15dvw;
   align-items: center;
-}
+} */
 footer {
   position: relative;
   display: flex;
   justify-content: center;
-  gap: 20px;
-  padding: 20px;
+  gap: 2dvw;
+  padding: 1dvw;
 }
 footer a {
   fill: var(--Darker-DarkMode);
@@ -302,15 +328,38 @@ footer a {
   nav {
     justify-content: space-between;
   }
+  .informations nav li a {
+    font-size: 1em;
+  }
   .container {
     flex-direction: column;
   }
   .informations {
     width: auto;
   }
+  .item {
+    width: 45dvw;
+  }
+  .item p {
+    font-size: 3dvw;
+  }
+  .item::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 0;
+    height: 24dvw;
+    background-color: var(--Darker-DarkMode);
+    transition: 500ms;
+    pointer-events: none;
+  }
+
   .item img {
+    width: 45dvw;
     margin: 0px;
   }
+
   #contact p {
     text-align: center;
     font-size: 1.5em;
@@ -325,6 +374,57 @@ footer a {
   }
 
   .informations header nav ul {
-    gap: 20px;
+    width: 100%;
+    gap: 10dvw;
+  }
+  #iconMode {
+    width: 3.5dvw;
+    cursor: pointer;
+    transition: all 500ms;
+  }
+  #iconLang {
+    font-size: 3dvw;
+    cursor: pointer;
+    transition: all 500ms;
+  }
+  .btn {
+    font-size: 2dvw;
+    width: 32dvw;
+    height: 10dvw;
+  }
+  footer {
+    padding: 20px;
+    gap: 10dvw;
+  }
+  svg {
+    width: 2dvw;
+    height: 2dvw;
+    transform: scale(2);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #iconMode {
+    width: 5dvw;
+    cursor: pointer;
+    transition: all 500ms;
+  }
+  #iconLang {
+    font-size: 4dvw;
+    cursor: pointer;
+    transition: all 500ms;
+  }
+  .btn {
+    font-size: 3dvw;
+    width: 52dvw;
+    height: 15dvw;
+  }
+  footer {
+    gap: 10dvw;
+  }
+  svg {
+    width: 3.6dvw;
+    height: 3.6dvw;
+    transform: scale(2);
   }
 }

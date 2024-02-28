@@ -1,5 +1,4 @@
 const tabs = document.querySelectorAll(".tabs");
-const selected_tab = document.querySelector(".selected-tab");
 const about = document.querySelector("#about");
 const project = document.querySelector("#project");
 const contact = document.querySelector("#contact");
@@ -24,7 +23,7 @@ function show(img) {
 }
 
 function hide() {
-  brand.style.width = "20em";
+  brand.style.width = "50%";
   brand.style.opacity = "0";
   setTimeout(() => {
     brand.src = src;
@@ -56,40 +55,23 @@ const TabSwitcher = () => {
   //Tab bar behavior
   switch (switcher) {
     case 1:
-      selected_tab.style.width = "15%";
-
+      tabs.forEach((element) => element.classList.remove("selected"));
+      tabs[0].classList.add("selected");
       content.style.transform = `translateX(0px)`;
       if (window.innerWidth <= 768) {
-        selected_tab.style.transform =
-          localStorage.getItem("language") === "en"
-            ? `translateX(50px)`
-            : `translateX(30px)`;
         about.style.display = "flex";
         project.style.display = "none";
         contact.style.display = "none";
-      } else
-        selected_tab.style.transform =
-          localStorage.getItem("language") === "en"
-            ? `translateX(75px)`
-            : `translateX(53px)`;
+      }
       about.style.opacity = "100%";
       project.style.opacity = "0";
       contact.style.opacity = "0";
       break;
     case 2:
-      selected_tab.style.transform =
-        localStorage.getItem("language") === "en"
-          ? `translateX(250px)`
-          : `translateX(236px)`;
-      selected_tab.style.width = `20%`;
+      tabs.forEach((element) => element.classList.remove("selected"));
+      tabs[1].classList.add("selected");
       content.style.transform = `translateX(0vw)`;
       if (window.innerWidth <= 768) {
-        selected_tab.style.transform =
-          localStorage.getItem("language") === "en"
-            ? `translateX(143px)`
-            : `translateX(117px)`;
-        selected_tab.style.width =
-          localStorage.getItem("language") === "en" ? `25%` : `30%`;
         about.style.display = "none";
         project.style.display = "flex";
         contact.style.display = "none";
@@ -100,21 +82,14 @@ const TabSwitcher = () => {
       contact.style.opacity = "0";
       break;
     case 3:
-      selected_tab.style.width =
-        localStorage.getItem("language") === "en" ? `18%` : `22%`;
+      tabs.forEach((element) => element.classList.remove("selected"));
+      tabs[2].classList.add("selected");
       content.style.transform = `translateX(0vw)`;
       if (window.innerWidth <= 768) {
-        selected_tab.style.width =
-          localStorage.getItem("language") === "en" ? `25%` : `28%`;
-        selected_tab.style.transform = `translateX(267px)`;
         about.style.display = "none";
         project.style.display = "none";
         contact.style.display = "flex";
-      } else
-        selected_tab.style.transform =
-          localStorage.getItem("language") === "en"
-            ? `translateX(463px)`
-            : `translateX(457px)`;
+      }
       contact.style.opacity = "100%";
       about.style.opacity = "0";
       project.style.opacity = "0";

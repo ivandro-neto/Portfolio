@@ -8,12 +8,11 @@ const CreateItem = (title, webURL, image) => {
 
   BodyCard.classList.add("item");
   WebURL.href = webURL;
+  WebURL.target = "_blank"
   Image.src = image;
   Image.ariaLabel = title;
   WebURL.appendChild(Image);
-  WebURL.addEventListener("mouseover", (e) =>
-    show(e.target)
-  );
+  WebURL.addEventListener("mouseover", (e) => show(e.target));
   WebURL.addEventListener("mouseout", () => hide());
   Title.innerText = title;
   BodyCard.appendChild(WebURL);
@@ -22,13 +21,15 @@ const CreateItem = (title, webURL, image) => {
 };
 
 const PopulateList = () => {
-  for (let i = 0; i < projects.length; i++) {
-    const item = document.createElement("li");
-    item.appendChild(
-      CreateItem(projects[i].Title, projects[i].WebURL, projects[i].ImageURL)
-    );
-    projectArea.appendChild(item);
-  }
+  if (projects.length > 0) {
+    for (let i = 0; i < projects.length; i++) {
+      const item = document.createElement("li");
+      item.appendChild(
+        CreateItem(projects[i].Title, projects[i].WebURL, projects[i].ImageURL)
+      );
+      projectArea.appendChild(item);
+    }
+  } else projectArea.innerHTML = "Oops! No Project Found here.";
 };
 
 PopulateList();
