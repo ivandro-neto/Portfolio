@@ -1,40 +1,15 @@
 const langIcon = document.querySelector("#iconLang");
 const icon = document.querySelector("#iconMode");
 
-/* Default theme set */
-document.addEventListener("DOMContentLoaded", () => {
-  const theme = localStorage.getItem("theme");
-
-  if (theme) {
-    document.body.classList.add(theme);
-  } else {
-    // Check if user prefers dark mode and apply dark theme
-    //console.log(window.matchMedia);
-    if (
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
-      document.body.classList.add("dark-theme");
-    } 
-  } 
-});
-
-setInterval(() => {
+icon.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
   if (document.body.classList.contains("dark-mode")) {
     brand.src = src = "images/Brand/Logo-extended---white.png";
     icon.src = "images/icons/imoon.png";
-    currentTheme = "dark-mode";
   } else {
     brand.src = src = "images/Brand/Logo-extended---black.png";
     icon.src = "images/icons/isun.png";
-    currentTheme = "";
   }
-}, 1);
-
-icon.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-  let currentTheme = "";
-  localStorage.setItem("theme", currentTheme);
 });
 
 if (!localStorage.getItem("language")) {
@@ -62,9 +37,7 @@ const UpdateTabs = (about, project, contact) => {
 
 const UpdateContact = (text, btnText) => {
   document.querySelector("#contact").childNodes[1].innerText = text;
-  document
-    .querySelectorAll("#btn a")
-    .forEach((button) => (button.innerText = btnText));
+  document.querySelectorAll("#btn a").forEach(button => button.innerText = btnText)
 };
 
 const ChangeLanguage = (selectedLanguage) => {
