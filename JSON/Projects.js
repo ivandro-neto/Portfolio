@@ -1,6 +1,6 @@
 const projects = [
   {
-    Title: "Time Tracking Dashboard",
+    Title: "EventHub API - C# version",
     WebURL: "https://github.com/ivandro-neto/EventHub",
     RepoURL: "---",
     ImageURL: "images/Projects/EventHubAPI.png",
