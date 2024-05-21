@@ -1,9 +1,9 @@
 const projects = [
   {
     Title: "Time Tracking Dashboard",
-    WebURL: "https://ivandro-neto.github.io/Time-Tracking-Dashboard/",
+    WebURL: "https://github.com/ivandro-neto/EventHub",
     RepoURL: "---",
-    ImageURL: "images/Projects/Time Tracking Dashboard.png",
+    ImageURL: "images/Projects/EventHubAPI.png",
     Description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic,
             obcaecati eveniet.Nesciunt a modi,
             ex neque aliquid ratione ut velit sit doloremque,
@@ -20,10 +20,10 @@ const projects = [
             laudantium delectus temporibus, ad eum sed debitis exercitationem.`,
   },
   {
-    Title: "Ecommerce Website",
-    WebURL: "https://ivandro-neto.github.io/Ecommerce/",
+    Title: "Design Patterns package projects - C#",
+    WebURL: "https://github.com/ivandro-neto/Design-Patterns-package-projects---C-",
     RepoURL: "---",
-    ImageURL: "images/Projects/Ecommerce.png",
+    ImageURL: "images/Projects/default.png",
     Description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic,
             obcaecati eveniet.Nesciunt a modi,
             ex neque aliquid ratione ut velit sit doloremque,
