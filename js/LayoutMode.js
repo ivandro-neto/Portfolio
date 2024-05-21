@@ -7,16 +7,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (theme) {
     document.body.classList.add(theme);
-  } /* else {
+  } else {
     // Check if user prefers dark mode and apply dark theme
-   /*  console.log(window.matchMedia);
+    //console.log(window.matchMedia);
     if (
       window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches
     ) {
       document.body.classList.add("dark-theme");
     } 
-  } */
+  } 
 });
 
 setInterval(() => {
